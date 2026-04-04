@@ -89,6 +89,7 @@ The agent's job:
 - Determine what to visualize (curve comparison, protocol diagram, distribution table, etc.)
 - Invoke the `obsidian-visual-skills:excalidraw-diagram` skill
 - Save the diagram to `assets/` and embed it in the note with `![[filename.md]]`
+- Ensure no text overlaps. Position text labels with enough clearance from lines, arrows, and other text so everything is readable. When in doubt, add more spacing between elements.
 
 If Step 1 said "no visual needed," skip this step. See the Visuals section below for the criteria that determine when a diagram is required vs optional.
 
