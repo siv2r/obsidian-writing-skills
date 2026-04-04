@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-writing-skills",
+  "owner": {
+    "name": "siv2r",
+    "url": "https://github.com/siv2r"
+  },
+  "plugins": [
+    {
+      "name": "writing",
+      "source": "./",
+      "description": "Opinionated writing skills for Obsidian, tuned for cryptography and mathematics",
+      "version": "0.1.0"
+    }
+  ]
+}
