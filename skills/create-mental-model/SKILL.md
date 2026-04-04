@@ -77,6 +77,21 @@ Run the generated note through the `/humanizer` skill as a **detection-only pass
 
 Common AI-tone markers to watch for: "Consider the set...", "Note that...", "It is worth noting...", "Recall that...", "This elegant approach...", "Importantly,...", "Crucially,...", "Interestingly,...".
 
+### Step 5: Visualize
+
+Runs only if Step 1 flagged a visual/spatial component. Spawn a separate agent (via the Agent tool) to handle diagram creation. Provide the agent with:
+- The note's file path
+- What the insight is about (one sentence)
+- What visual dimension was identified in Step 1 (e.g., "function curves comparing growth rates", "protocol round structure", "joint distribution table")
+
+The agent's job:
+- Read the written note to understand the insight
+- Determine what to visualize (curve comparison, protocol diagram, distribution table, etc.)
+- Invoke the `obsidian-visual-skills:excalidraw-diagram` skill
+- Save the diagram to `assets/` and embed it in the note with `![[filename.md]]`
+
+If Step 1 said "no visual needed," skip this step. See the Visuals section below for the criteria that determine when a diagram is required vs optional.
+
 ## Two Structural Templates
 
 Choose based on the nature of the insight. If the insight can be stated cleanly before the reasoning, use punchline upfront. If the insight is a reframing that resolves a specific confusion, use stuck-point-to-resolution.
@@ -169,7 +184,7 @@ The voice is concise and direct. It doesn't pad with filler, doesn't hedge unnec
 
 Diagrams are not optional decoration. They are a core part of understanding. A mental model note without visuals, when the insight has any spatial, structural, or comparative dimension, is incomplete.
 
-**Default: create an Excalidraw diagram.** After writing the note, invoke the `obsidian-visual-skills:excalidraw-diagram` skill to generate a diagram for the insight. Save the diagram to `assets/` and embed it in the note with `![[filename.md]]`. This is the standard visual tool for this vault.
+**Step 5 (Visualize) handles diagram creation.** The criteria below determine when a diagram is required. The Excalidraw diagram skill (`obsidian-visual-skills:excalidraw-diagram`) is the standard visual tool for this vault. Diagrams are saved to `assets/` and embedded in the note with `![[filename.md]]`.
 
 **When a diagram is required (not optional):**
 - Joint distribution tables, probability grids, or any tabular structure where patterns emerge visually (e.g., XOR permutation pattern in a joint table)
