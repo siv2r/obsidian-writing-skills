@@ -36,6 +36,7 @@ The `/humanizer` skill is recommended for voice verification but not required.
 | Skill | Description |
 |-------|-------------|
 | [create-mental-model](skills/create-mental-model) | Extract the single aha moment from a conversation or thinking session and write it up so future-you can re-create the insight months later, even if you've forgotten the details. Generates LaTeX equations and Excalidraw diagrams where the insight needs them, written in clear technical prose that skips the textbook tone. |
+| [write-concept-note](skills/write-concept-note) | Convert source material (AI conversations, blog posts, textbook excerpts, PR reviews, explainer docs) into a short 300-800 word reference concept note under `knowledge/` in your Obsidian vault. Written in explanatory-clarity voice (Brilliant-wiki / 3Blue1Brown register) — a standalone reference, not a personal insight. |
 
 ## Voice & Domain
 
