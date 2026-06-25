@@ -53,7 +53,7 @@ Default to ONE note. Only split when the aha moments serve genuinely different r
 
 Generate the note using the appropriate structural template (see below).
 
-Before writing, invoke the `obsidian:obsidian-markdown` skill to ensure correct Obsidian syntax (wikilinks, callouts, LaTeX, frontmatter).
+Before writing, read `writing-principles.md` for the general craft rules (plain English, lead with the point, scannable prose, structure fits content), then invoke the `obsidian:obsidian-markdown` skill to ensure correct Obsidian syntax (wikilinks, callouts, LaTeX, frontmatter).
 
 The note must use this frontmatter:
 ```yaml
@@ -236,6 +236,7 @@ Walking through a proof step by step without ever posing a question or surfacing
 - Default to ONE note per invocation. Only split when aha moments are genuinely independent.
 - No em dashes anywhere in the output.
 - No convoluted metaphors. Build from known logic, math, reasoning, and facts.
+- General plain-English and layout rules live in `writing-principles.md` (read it before writing). The one that matters most here: keep derivations in prose, since bulleting a reasoning chain strips the connective logic that makes it re-derivable, which is the whole point of the note.
 - Every section must earn its place by advancing the core insight.
 - Use `[[wikilinks]]` for cross-references between notes and to related vault content.
 - Use `$$...$$` for display math and `$...$` for inline math.

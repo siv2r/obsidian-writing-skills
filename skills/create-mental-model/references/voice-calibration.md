@@ -100,5 +100,10 @@ The author writes plainly. These words sound like AI trying to sound smart:
 | "crucially" | (cut it, just state the fact) |
 | "the *right* threshold" | "the threshold that actually works" |
 | "it turns out that" | (just state what turns out) |
+| "utilize" | "use" |
+| "in order to" | "to" |
+| "due to the fact that" | "because" |
+| "demonstrate" | "show" |
+| "it is worth noting that" | (cut it) |
 
 The author's actual register: "That's all this is", "just works", "The 'bad' linear fit is actually a feature", "This doesn't solve the problem." Direct. No reaching.

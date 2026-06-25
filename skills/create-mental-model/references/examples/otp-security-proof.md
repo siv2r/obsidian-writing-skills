@@ -5,11 +5,13 @@ tags:
   - cryptography
 created: 2026-04-01
 sources: []
-related: []
+related:
+  - "[[random-variable]]"
+  - "[[conditional-probability]]"
 ---
 ## Security Game
 
-The adversary $\mathcal{A}$ picks two messages $m_0, m_1 \in \{0, 1\}$ and sends them to the challenger. The challenger samples $k \xleftarrow{\$} \{0, 1\}$ and $b \xleftarrow{\$} \{0, 1\}$, computes $c_b = k \oplus m_b$, and sends the ciphertext back to the adversary. The adversary then outputs a guess $b'$. We want to show that $\text{Adv}_{\mathcal{A}}^{\text{distinguishcipher}} = 0$ for the one-time pad.
+The adversary $\mathcal{A}$ picks two messages $m_0, m_1 \in \{0, 1\}$ and sends them to the challenger. The challenger samples $k \xleftarrow{\text{\textdollar}} \{0, 1\}$ and $b \xleftarrow{\text{\textdollar}} \{0, 1\}$, computes $c_b = k \oplus m_b$, and sends the ciphertext back to the adversary. The adversary then outputs a guess $b'$. We want to show that $\text{Adv}_{\mathcal{A}}^{\text{distinguishcipher}} = 0$ for the one-time pad.
 
 ## Setting Up the Probability
 
