@@ -35,9 +35,14 @@ Identify the aha moments from the input. For each, determine:
 
 ### Step 2: Confirm
 
-Present a brief framing to the user. One quick exchange, not a brainstorming session. The user has already identified the aha moments; you are confirming the *angle*.
+One combined exchange before writing, always. Run it even when the input is pasted text rather than a transcript file, and even when a kickoff prompt already supplies an approved structure (the preview catches drift between the plan and what the source actually holds). Present, in a single message:
 
-Example confirmation:
+1. **Source summary**: a few bullets on what the source covered: the topics, where the author got stuck, and what clicked. This doubles as proof the skill read the source right.
+2. **The angle**: the single reducible {question, trick, or concept} each note answers, and which template it takes. Default to ONE note. Only split when the aha moments serve genuinely different reducible questions. If splitting, cross-reference with `[[wikilinks]]`.
+3. **Structure preview**: the note's sections in order, one line per section on what it holds. List each proposed diagram as its own line (which section, what the figure shows) so it can be vetoed before any writing happens.
+4. **Frontmatter**: the filename slug, tags, sources, and related wikilinks.
+
+Example angle framing:
 > I see one note here: "Why Lagrange coefficients sum to 1" — the trick is interpolating all-ones to get a constant function, so f(0) = 1. Punchline-upfront structure. Sound right?
 
 Or for multiple insights:
@@ -47,7 +52,7 @@ Or for multiple insights:
 >
 > I'd write just #1. Agree?
 
-Default to ONE note. Only split when the aha moments serve genuinely different reducible questions. If splitting, cross-reference with `[[wikilinks]]`.
+Then stop and wait for the user to tweak or approve. After tweaks, acknowledge them in one line and start writing, do not re-present the full outline. In an autonomous or non-interactive run, make these calls yourself on the most reasonable reading, state the summary and structure compactly, and proceed.
 
 ### Step 3: Write
 
@@ -76,6 +81,8 @@ Save to the `knowledge/` folder in the vault.
 Run the generated note through the `/humanizer` skill as a **detection-only pass**. This flags AI-tone markers. Then rewrite ONLY the flagged spots in the author's voice. Do not rewrite the entire note. Preserve all technical content, mathematical precision, and structural choices.
 
 Common AI-tone markers to watch for: "Consider the set...", "Note that...", "It is worth noting...", "Recall that...", "This elegant approach...", "Importantly,...", "Crucially,...", "Interestingly,...".
+
+Then a completeness check: spawn a subagent (`model: "sonnet"`) that re-reads the source and the finished note and returns any realizations or aha moments the note missed. Fold in the ones that matter, ignore the rest.
 
 ### Step 5: Visualize
 

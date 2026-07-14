@@ -38,15 +38,20 @@ Split into two or three notes only when the session genuinely covered distinct, 
 
 While reading, watch for an **aha candidate**: a moment where the learner was stuck and a reframing dissolved it, the kind of thing `/create-mental-model` exists to capture. Note it for the confirm step. Do not write it up here yet.
 
+Also harvest the **learner's own phrasings of core ideas** while reading: a side note, a proof annotation, a summary in their words ("the important property is realizing P(U <= F(x)) = F(x), the core of this proof"). When the note explains that idea, use their line, verbatim or rephrased into a clearer sentence that loses none of the meaning. Their wording of a key insight beats a freshly composed explanation, because it is the understanding the note exists to preserve. Do this by default, without waiting to be asked.
+
 ### Step 2: Confirm
 
-One quick exchange before writing. Present:
+One combined exchange before writing, always. Run it even when a kickoff prompt or contract file already supplies an approved structure (the preview catches drift between the contract and what the transcript actually holds), and even when the input is pasted text rather than a file. Present, in a single message:
 
-1. **The plan**: one note, or a conservative split, with a one-line title for each.
-2. **Aha candidates**: if Step 1 found one, ask whether to promote it. "The part where you got stuck on X and then saw Y looks like its own mental-model note. Want me to hand that to `/create-mental-model`, or just cover it briefly here?" If they say promote, default to finishing this concept note first with a `[[link]]` to the aha note (the wikilink is fine before that note exists), then run `/create-mental-model` on the aha. Reverse the order only if they ask. If they say it is not a deep enough aha to deserve its own note, fold a short version into the concept note instead.
-3. **Links**: if mental-model notes already exist from this session, plan to `[[wikilink]]` them rather than re-explaining their content. The learner usually knows. If unsure, grep `~/Notes/knowledge/` for `type: mental-model` notes that match the session's topic by filename or tag.
+1. **Source summary**: a few bullets on what the session covered: the topics worked through, the concepts discussed, where the learner got stuck, and what made it click. This doubles as proof the skill read the source right.
+2. **The plan**: one note, or a conservative split, with a one-line title for each.
+3. **Structure preview**: for each planned note, its sections in order, one line per section on what it holds. List each proposed diagram as its own line (which section, what the figure shows) so it can be vetoed before any writing happens.
+4. **Frontmatter**: each note's filename slug, tags, sources, and related wikilinks.
+5. **Aha candidates**: if Step 1 found one, ask whether to promote it. "The part where you got stuck on X and then saw Y looks like its own mental-model note. Want me to hand that to `/create-mental-model`, or just cover it briefly here?" If they say promote, default to finishing this concept note first with a `[[link]]` to the aha note (the wikilink is fine before that note exists), then run `/create-mental-model` on the aha. Reverse the order only if they ask. If they say it is not a deep enough aha to deserve its own note, fold a short version into the concept note instead.
+6. **Links**: if mental-model notes already exist from this session, plan to `[[wikilink]]` them rather than re-explaining their content. The learner usually knows. If unsure, grep `~/Notes/knowledge/` for `type: mental-model` notes that match the session's topic by filename or tag.
 
-Proceed once the learner confirms. If they redirect the scope, adjust and reconfirm in one line. In an autonomous or non-interactive run, make these calls yourself on the most reasonable reading, state them in one line, and proceed.
+Then stop and wait. The learner will tweak or approve. After tweaks, acknowledge them in one line and start writing, do not re-present the full outline. In an autonomous or non-interactive run, make these calls yourself on the most reasonable reading, state the summary and structure compactly, and proceed.
 
 ### Step 3: Write
 
@@ -59,6 +64,8 @@ Before writing, read `writing-principles.md` for the general craft rules (plain 
 Run the note through the `humanizer` skill as a **detection-only pass**. It flags AI-tone markers. Rewrite only the flagged spots in the learner's voice, leave everything else. Do not relaunder the whole note.
 
 Then a quick structural self-check: does the note reduce to its stated concept(s)? Does every section earn its place? Is the English plain (see the rule below)? Are existing aha notes linked rather than duplicated?
+
+Then a completeness check: spawn a subagent (`model: "sonnet"`) that re-reads the transcript and the finished note(s) and returns any learner realizations, aha moments, or tutor-confirmed observations the notes missed. Fold in the ones that matter, ignore the rest.
 
 Optional visual: if a concept is genuinely spatial or structural (a distribution, a protocol's round order, a geometric symmetry), spawn an agent to make one Excalidraw diagram via `obsidian-visual-skills:excalidraw-diagram`, save to `~/Notes/assets/`, and embed it with `![[filename]]`. Skip it for pure algebra or definitions. A diagram that does not carry understanding is clutter.
 

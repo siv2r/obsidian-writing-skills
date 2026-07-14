@@ -9,6 +9,7 @@ General craft rules for any knowledge note in this vault. They cover clarity, st
 Keep the English **simple, clear, and easy to read**. This is the rule that matters most.
 
 - **Keep technical terms exact.** Nonce, homomorphism, negligible, Lagrange coefficient, soft fork. Never dumb the domain down. The reader is a cryptography engineer.
+- **Stick to vocabulary the session taught.** A standard term the transcript never used (say "moments" for $E(X^k)$) reads as a gap, not a shorthand, when the learner rereads their own note. Define it in a short parenthetical at first use, or say the plain phrase ("mean and variance") instead.
 - **Cut fancy English that is not the concept.** Words reaching for sophistication the author does not use, like "elegant", "leverage", or "crucially". Replace them with plain words or cut them. The full swap list, including connector words like "utilize" and "in order to", lives in `voice-calibration.md`.
 - **Keep sentences short.** Aim for about 15 to 20 words, treat 25 as a soft cap, and split any sentence you have to read twice. A non-native reader decoding vocabulary, syntax, and math at once feels a long sentence harder than a native reader does.
 - The test: every non-technical word should be one a tired reader understands at once. If a sentence sounds smart, suspect it. Clear beats impressive.
@@ -32,6 +33,8 @@ Faithful is the hard constraint. The note must be factually correct, it must cap
 ## Add the why, show a concrete case
 
 After a main claim, add one sentence on why it must be true, or what would break if it were false, even when it feels obvious. That one sentence is what makes a note teach instead of list. Show one concrete instance per key idea too, ideally before the abstract statement, since a worked example with real values is a second, independent way to recall the idea months later. This works at the level of a claim or a paragraph, not as a section you bolt on.
+
+The cap: one anchor per explanation, not a chain. When a paragraph explains why something works, the logic carries it, and a single compact example (ideally the learner's own phrasing from the transcript) is the most it needs. Stacking a second or third worked case makes the paragraph longer without making it clearer. If an extra example feels essential, give it its own paragraph. And when a paragraph runs long, cut examples before cutting reasoning.
 
 ## Scannable prose, not a bullet pile
 
